@@ -1,0 +1,125 @@
+/* ==========================================================
+   Chartify — Handcrafted Designer Palette & Typography System
+   Warm yellowish-white paper background & designer orange accents
+   ========================================================== */
+
+:root {
+  /* Warm yellowish-white paper canvas */
+  --bg-canvas: #fbf9f4;
+  --bg-canvas-subtle: #f5f1e7;
+  --bg-card: #ffffff;
+  --bg-card-warm: #fffdf9;
+  --bg-card-hover: #fcfbf7;
+  --bg-input: #ffffff;
+  --bg-modal-overlay: rgba(28, 25, 23, 0.6);
+
+  /* Deep warm ink typography */
+  --ink-primary: #1c1917;
+  --ink-secondary: #44403c;
+  --ink-muted: #78716c;
+  --ink-faint: #a8a29e;
+
+  /* Handcrafted designer orange */
+  --orange-primary: #ea580c;
+  --orange-hover: #c2410c;
+  --orange-active: #9a3412;
+  --orange-soft: #fff7ed;
+  --orange-border: #fed7aa;
+  --orange-shadow: rgba(234, 88, 12, 0.22);
+
+  /* Warm paper borders */
+  --border-card: #e5dfd3;
+  --border-subtle: #ece6da;
+  --border-strong: #292524;
+
+  /* Tactile shadows */
+  --shadow-card: 0 1px 2px rgba(41, 37, 36, 0.04), 0 4px 14px rgba(41, 37, 36, 0.03);
+  --shadow-card-hover: 0 3px 6px rgba(41, 37, 36, 0.05), 0 10px 24px rgba(41, 37, 36, 0.06);
+  --shadow-modal: 0 20px 50px rgba(28, 25, 23, 0.18), 0 2px 8px rgba(28, 25, 23, 0.06);
+
+  /* Radius */
+  --radius-xs: 4px;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+
+  /* Fonts */
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+}
+
+/* Global Reset */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: var(--bg-canvas);
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--bg-canvas);
+  color: var(--ink-primary);
+  line-height: 1.6;
+  min-height: 100vh;
+  /* Very subtle organic paper texture */
+  background-image: radial-gradient(rgba(120, 113, 108, 0.08) 1px, transparent 0);
+  background-size: 24px 24px;
+}
+
+#app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 7px;
+  height: 7px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6cfc2;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #b8af9f;
+}
+
+/* Text Selection */
+::selection {
+  background: #fed7aa;
+  color: #7c2d12;
+}
+
+/* Animations */
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity 0.22s ease;
+}
+
+.fade-enter-from,
+.fade-leave-to {
+  opacity: 0;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
