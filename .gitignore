@@ -1,12 +1,3 @@
-# Rust
-backend/target/
-backend/.env
-
-# Node
-frontend/node_modules/
-frontend/dist/
-frontend/.netlify/
-
 # IDE
 .vscode/
 .idea/
