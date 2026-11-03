@@ -17,7 +17,13 @@ async function handleAnalyze({ text, model, apiKey }) {
   showDashboard.value = false
 
   try {
-    const res = await fetch('http://localhost:3001/api/analyze', {
+    const apiBaseUrl = import.meta.env.VITE_API_BASE_URL || (import.meta.env.DEV ? 'http://localhost:3001' : '')
+
+    if (!apiBaseUrl) {
+      throw new Error('The backend URL is not configured. Set VITE_API_BASE_URL before building.')
+    }
+
+    const res = await fetch(`${apiBaseUrl.replace(/\/+$/, '')}/api/analyze`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({
